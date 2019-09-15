@@ -1,6 +1,5 @@
 import React from 'react';
 import './Board.css';
-import Cell from '../cell/Cell';
 
 class Board extends React.Component {
     constructor(props) {
@@ -21,7 +20,7 @@ class Board extends React.Component {
         for (let i = 0; i < this.props.alto; i++) {
             let cols = [];
             for (let j = 0; j < this.props.ancho; j++) {
-                cols.push(<Cell x={i} y={j}></Cell>);
+                cols.push(<div className="cell"> {i} - {j} </div>);
             }
             rows.push(<div className="d-flex">{cols}</div>);
         }
