@@ -1,7 +1,7 @@
 import React from 'react';
-import './Board.css';
+import './BoardSetup.css';
 
-class Board extends React.Component {
+class BoardSetup extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -20,7 +20,12 @@ class Board extends React.Component {
         for (let i = 0; i < this.props.alto; i++) {
             let cols = [];
             for (let j = 0; j < this.props.ancho; j++) {
-                cols.push(<div className="cell"> {i} - {j} </div>);
+                cols.push(
+                    <div className="cell">
+                        <span>X={j}</span>
+                        <span>Y={this.props.alto - 1 - i}</span>
+                    </div>
+                );
             }
             rows.push(<div className="d-flex">{cols}</div>);
         }
@@ -28,4 +33,4 @@ class Board extends React.Component {
     }
 }
 
-export default Board;
+export default BoardSetup;

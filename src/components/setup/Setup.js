@@ -1,8 +1,6 @@
 import React from 'react';
-import Board from '../board/Board';
-/**
- * pantalla de armado de grilla
- */
+import BoardSetup from './board/BoardSetup';
+import ConfigSetup from './config/ConfigSetup';
 
 class Setup extends React.Component {
   constructor(props) {
@@ -11,10 +9,16 @@ class Setup extends React.Component {
 
   render() {
     return (
-      <div className="container-fluid" style={{ "overflow": "auto" }}>
-        <div className="justify-content-center d-flex">
-          <Board alto={10} ancho={10}></Board>
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-5">
+            <ConfigSetup></ConfigSetup>
+          </div>
+          <div className="col-sm-7 d-flex justify-content-center">
+            <BoardSetup alto={10} ancho={10}></BoardSetup>
+          </div>
         </div>
+
       </div>
     );
   }
